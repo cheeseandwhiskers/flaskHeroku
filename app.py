@@ -1,13 +1,14 @@
 from flask import Flask,jsonify,request,g
 from model.User import User
 from validation.Validator import *
+from datetime import datetime
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     try:
-        message={'message':'Hello World'}
+        message={'message':'Hello World {}'.format(datetime.now())}
         return jsonify(message),200
     except Exception as e :
         message={"message":"Error!!"}

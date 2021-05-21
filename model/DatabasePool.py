@@ -15,7 +15,7 @@ class DatabasePool:
     #Database settings (load from Settings.py)
     connection_pool = pooling.MySQLConnectionPool(
                                pool_name="ws_pool",
-                               pool_size=5,
+                               pool_size=2,
                                host=Settings.host,
                                database=Settings.database,
                                user=Settings.user,
