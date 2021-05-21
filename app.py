@@ -4,6 +4,14 @@ from validation.Validator import *
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    try:
+        message={'message':'Hello World'}
+        return jsonify(message),200
+    except Exception as e :
+        message={"message":"Error!!"}
+        return jsonify(message),500
 
 @app.route('/users/<int:userid>', methods=['GET'])
 @login_required #apply decorator login_required 
